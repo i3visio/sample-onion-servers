@@ -1,11 +1,11 @@
-Contributing to OSRFramework
-============================
+Contributing to the project
+===========================
 
 Reporting issues, bugs and fresh ideas
 --------------------------------------
 
 The way in which we track the issues regarding the software is by means of the issues page in Github's project site.
-Whether you have experimented problems with the installation, you have found a bug in a new platform or you feel that we can add a new functionality, you can find the place to report them there. The only "rule" is to notify one error per issue to be able to track the problems indepently, as well as trying to provide as much information as possible regarding the OS or version you are trying.
+Whether you have experimented problems with the installation, you have found a bug in a new platform or you feel that we can add a new functionality, you can find the place to report them there. The only "rule" is to notify one error per issue to be able to track the problems independently, as well as trying to provide as much information as possible regarding the OS or version you are trying.
 
 If you find that a transform in Maltego is not behaving as expected, we recommend you to set the debug mode as True. Go to Manage --> Manage Transforms, choose the transform and mark the "Set debug info" as True. Please, copy the information shown in the new tab in the issue so as to provide more information to debug it faster.
 
@@ -25,7 +25,7 @@ cd osrframework
 
 Then, you can modify any file you want, for example, the `README.md`.
 ```
-# Opening it with nano... 
+# Opening it with nano...
 nano README.md
 ```
 
@@ -34,7 +34,7 @@ After the apprpriate changes have been performed, you can test the installation 
 pip install -e ./
 ```
 
-Whenever you want, you can add the changes performed to the Git index to keep track of what you have changed and prepar it for the commit. 
+Whenever you want, you can add the changes performed to the Git index to keep track of what you have changed and prepar it for the commit.
 ```
 # Add one file
 git add ./README.md
@@ -72,4 +72,3 @@ Licensing
 ---------
 
 The only thing we expect from other authors'code is to use a GPL-compatible license for their code, preferably GPLv3+ itself. We hope that anybody can use this tool for free (as in Free Software Foundation's four freedoms, not as in *free beer*), so help us to do it.
-
