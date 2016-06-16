@@ -3,6 +3,10 @@ Changelog
 
 For more information, check the README.md.
 
+0.1.1, 2016/06/14 -- Addition of a __init__.py file in the server folder.
+- Addition of a __init__.py file in the server folder.
+- Correction of minor typos in the HTML shown.
+
 0.1.0, 2016/06/13 -- Inclusion of two sample hidden services: hello-onion and headers-onion.
 - Inclusion of two sample hidden services: hello-onion and headers-onion.
 - Abstraction of the process of creating new services and making them available through Tor.

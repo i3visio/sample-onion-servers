@@ -23,7 +23,7 @@
 
 __NAME__ = "headers-onion"
 __DESCRIPTION__ = "Sample .onion service that returns the headers of a request."
-__VERSION__ = "0.0.1"
+__VERSION__ = "0.0.2"
 
 # DEFAULT OPTIONS
 DEFAULT_HOST = "localhost"
@@ -56,13 +56,13 @@ def index():
     # get the Accept paramter from the HTTP Header
     print json.dumps(dict(request.headers),indent=2)
     return '''
-        <h1>Bienvenido a esta huera de cebollas</h1>
+        <h1>Bienvenido a esta huerta de cebollas</h1>
 
         <b>¡Hola hacker!</b>
         <br>
-        Pues nada, que esto es un <i>hidden service</i> de prueba. Quizás quieras probar nuestra super-API que te saluda de una forma muy especial.
+        Pues nada, que esto es un <i>hidden service</i> de prueba. Quizás quieras probar nuestra <i>aplicación</i> que te saluda de una forma muy especial.
         <br>
-        Por ejemplo, si te llamas Paco, prueba con <a href="/hola/paco">/hola/paco</a>.
+        Por ejemplo, prueba con <a href="/hola/paco">/hola/paco</a>, <a href="/hola/paco">/hola/james</a>, <a href="/hola/paco">/hola/ronaldo</a>...
     ''' + getFooter()
 
 @route('/hola/<name>')

@@ -47,7 +47,7 @@ def index():
         Date una vuelta por:
         <ul>
         <li><a href="/javascript">/javascript</a>: para ver si tienes javascript activado</li>
-        <li><a href="/hola/hacker">/hola/paco</a>: si te llamas Paco, para que te saludemos</li>
+        <li><a href="/hola/hacker">/hola/paco</a>: si te llamas Paco, para que te saludemos de forma personalizada</li>
         </ul>
     '''
 
