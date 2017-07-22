@@ -3,7 +3,7 @@
 #
 ##################################################################################
 #
-#    Copyright 2016 Félix Brezo and Yaiza Rubio (i3visio, contacto@i3visio.com)
+#    Copyright 2016-2017 Félix Brezo and Yaiza Rubio (i3visio, contacto@i3visio.com)
 #
 #    This program is free software. You can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -23,7 +23,7 @@
 
 __NAME__ = "hello-onion"
 __DESCRIPTION__ = "Sample .onion service."
-__VERSION__ = "0.0.1"
+__VERSION__ = "1.0"
 
 # DEFAULT OPTIONS
 DEFAULT_HOST = "localhost"
@@ -39,34 +39,36 @@ from bottle import response
 from bottle import request
 from bottle import redirect
 
+
 @route('/')
 def index():
-    return '''
-        <h1>¡Hola hola!</h1>
-        Pues nada, que esto es un <i>hidden service</i> de prueba.
-        Date una vuelta por:
+    return ''' 
+        <h1>Hi guys!</h1>
+        Another sample onion service built in Python with Bottle and Stem.
+        Just a couple of things to be seen here:
         <ul>
-        <li><a href="/javascript">/javascript</a>: para ver si tienes javascript activado</li>
-        <li><a href="/hola/hacker">/hola/paco</a>: si te llamas Paco, para que te saludemos de forma personalizada</li>
+            <li><a href="/javascript">/javascript</a>: To see if you have Javascript active in your current browser.</li>
+            <li><a href="/hola/hacker">/hola/paco</a>: To say hello as Paco. That's all!</li>
         </ul>
     '''
 
+
 @route('/javascript')
 def sayHello():
-    return '''
-        Esta página tiene un Javascript chungo...
-        <script>alert("Soy un javascript... Y soy malévolo... ¡MUAHAHA!");</script>
+    return ''' 
+        This website has a Javascript embedded.
+        <script>alert("I'm just some arbitrary Javascript running on your browser. Is Tor browser enough?");</script>
     '''
+
 
 @route('/hola/<name>')
 def sayHelloToName(name):
-    print "Saludemos a " + name
+    print "[*] From the backend, we log that we are going to say hello to " + name
     return template(
-    '¡Hola <b>{{name}}</b>!', name=name)
+    'Hi <b>{{name}}</b>!', name=name)
 
-"""
-    Main execution of the server... It will generally won't need to be modified...
-"""
+
+# Main execution of the server... It will generally won't need to be modified...
 if __name__ == "__main__":
     # Importing the service_manager that launches the application...
     import service_manager
