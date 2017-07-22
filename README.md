@@ -73,6 +73,30 @@ of servers that may help you:
 request as seen by the server. Useful to test the queries sent by third parties
 gateways without messing up too much.
 
+Check your Tor configuration as defined in [INSTALL.md](INSTALL.md) If when 
+launching the scripts with python, you are refused an error similar to this 
+one:
+```
+ * Connecting to tor...
+Traceback (most recent call last):
+  File "headers-onion.py", line 104, in <module>
+    service_manager.main(name = __NAME__, host = args.host, port = args.port, data_dir = args.data_dir, debug = args.debug, clean = args.clean, tor=True)
+  File "/root/Documents/sample-onion-servers/server/service_manager.py", line 43, in main
+    with Controller.from_port(port=9051) as controller:
+  File "/usr/local/lib/python2.7/dist-packages/stem/control.py", line 998, in from_port
+    control_port = stem.socket.ControlPort(address, port)
+  File "/usr/local/lib/python2.7/dist-packages/stem/socket.py", line 372, in __init__
+    self.connect()
+  File "/usr/local/lib/python2.7/dist-packages/stem/socket.py", line 243, in connect
+    self._socket = self._make_socket()
+  File "/usr/local/lib/python2.7/dist-packages/stem/socket.py", line 401, in _make_socket
+    raise stem.SocketError(exc)
+stem.SocketError: [Errno 111] Connection refused
+```
+
+This is typically shown either when Tor is not up and running or when the 
+ControlPort and authentication method have not been defined.
+
 5 - Hacking
 -----------
 
