@@ -1,14 +1,15 @@
-ProjectName
-===========
+Sample Onion Services
+====================
 
-ProjectName
-
-Copyright (C) 2016  F. Brezo and Y. Rubio, i3visio
+Copyright (C) 2016-2017  F. Brezo and Y. Rubio, i3visio
 
 1 - Description
 ---------------
 
-TO-DO.
+This project includes a couple of onion services deployed with Bottle and Tor's stem.
+By doing so, we want to provide an easy-to-use approach that makes to understand the
+behaviour of certain Tor Gateways.
+
 
 2 - License: GPLv3+
 -------------------
@@ -34,21 +35,46 @@ For more details on this issue, check the [COPYING](COPYING) file.
 3 - Installation
 ----------------
 
-TO-DO.
+You will also need to have Tor up and running with several special specifications
+Open the `/et/tor/torrc` file and search the `ControlPort 9051` line and uncomment
+it. You will also need to uncomment the `CookieAuthentication 1` line to let `stem`
+control the instance from Python code. Full details can be found in the 
+[INSTALL.md](INSTALL.MD) file. Afterwards, restart tor service:
+```
+service tor restart
+```
 
-If you needed further information, check the [INSTALL.md](INSTALL.md) file.
+If everything went Ok, you can download the project knowing that you need a 
+Python 2 installation (tested with 2.7) and pip. Check it using:
+```
+python --version
+pip --version
+```
+
+You can now clone the project using `git` for example.
+```
+git clone https://github.com/i3visio/sample-onion-servers
+```
+
+Afterwards, fix the dependencies:
+```
+cd sample-onion-servers
+pip install -r requirements.txt
+```
+
+You should be ready to go now.
 
 4 - Basic usage
 ---------------
 
-TO-DO.
+You should explore the `server` folder. There you will be able to find a couple 
+of servers that may help you:
+* `hello-onion.py`. Just a hello world as an example.
+* `headers-onion.py`. It shows the headers sent by the user who performed the
+request as seen by the server. Useful to test the queries sent by third parties
+gateways without messing up too much.
 
-5 - HACKING
------------
-
-If you want to extend the functionalities of OSRFramework and you do not know where to start from, check the [HACKING.md](HACKING.md) file.
-
-6 - AUTHORS
+5 - AUTHORS
 -----------
 
 More details about the authors in the [AUTHORS.md](AUTHORS.md) file.
