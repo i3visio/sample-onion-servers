@@ -73,7 +73,13 @@ of servers that may help you:
 request as seen by the server. Useful to test the queries sent by third parties
 gateways without messing up too much.
 
-5 - AUTHORS
+5 - Hacking
+-----------
+
+Check the details at the [HACKING.md](HACKING.md) file to read the guidelines
+about how to contribute to this project.
+
+6 - Authors
 -----------
 
 More details about the authors in the [AUTHORS.md](AUTHORS.md) file.
