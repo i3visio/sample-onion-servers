@@ -10,24 +10,23 @@ This project includes a couple of onion services deployed with Bottle and Tor's 
 By doing so, we want to provide an easy-to-use approach that makes to understand the
 behaviour of certain Tor Gateways.
 
-
-2 - License: GPLv3+
+2 - License: AGPLv3+
 -------------------
 
 This is free software, and you are welcome to redistribute it under certain conditions.
 
 	This program is free software: you can redistribute it and/or modify
-	it under the terms of the GNU General Public License as published by
+	it under the terms of the GNU Affero General Public License as published by
 	the Free Software Foundation, either version 3 of the License, or
 	(at your option) any later version.
 
 	This program is distributed in the hope that it will be useful,
 	but WITHOUT ANY WARRANTY; without even the implied warranty of
 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-	GNU General Public License for more details.
+	GNU Affero General Public License for more details.
 
-	You should have received a copy of the GNU General Public License
-	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+	You should have received a copy of the GNU Affero General Public License
+	along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 
 For more details on this issue, check the [COPYING](COPYING) file.
