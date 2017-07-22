@@ -3,7 +3,7 @@
 #
 ##################################################################################
 #
-#    Copyright 2016 Félix Brezo and Yaiza Rubio (i3visio, contacto@i3visio.com)
+#    Copyright 2016-2017 Félix Brezo and Yaiza Rubio (i3visio, contacto@i3visio.com)
 #
 #    This program is free software. You can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
@@ -23,7 +23,7 @@
 
 __NAME__ = "headers-onion"
 __DESCRIPTION__ = "Sample .onion service that returns the headers of a request."
-__VERSION__ = "0.0.2"
+__VERSION__ = "1.0"
 
 # DEFAULT OPTIONS
 DEFAULT_HOST = "localhost"
@@ -45,24 +45,24 @@ from bottle import redirect
 from bottle import post, get, put, delete
 
 def getFooter():
-    return '''
+    return ''' 
         <br>
         <br>
-        <small>Este <i>software</i> es <i>software</i> libre bajo licencia <a href="https://www.gnu.org/licenses/agpl.txt">AGPLv3</a>.</small>
+        <small>This software is free software under <a href="https://www.gnu.org/licenses/agpl.txt">AGPLv3</a> license.</small>
     '''
 
 @route('/')
 def index():
     # get the Accept paramter from the HTTP Header
     print json.dumps(dict(request.headers),indent=2)
-    return '''
-        <h1>Bienvenido a esta huerta de cebollas</h1>
+    return ''' 
+        <h1>Welcome to this hidden service</h1>
 
-        <b>¡Hola hacker!</b>
+        <b>Hi there!</b>
         <br>
-        Pues nada, que esto es un <i>hidden service</i> de prueba. Quizás quieras probar nuestra <i>aplicación</i> que te saluda de una forma muy especial.
+        This is just a sample hidden service with not much to do. It just says you hello answering with the headers sent by you.
         <br>
-        Por ejemplo, prueba con <a href="/hola/paco">/hola/paco</a>, <a href="/hola/paco">/hola/james</a>, <a href="/hola/paco">/hola/ronaldo</a>...
+        For example, try <a href="/hola/paco">/hola/paco</a>, <a href="/hola/james">/hola/james</a>, <a href="/hola/ronaldo">/hola/ronaldo</a>...
     ''' + getFooter()
 
 @route('/hola/<name>')
@@ -70,11 +70,11 @@ def sayHelloToName(name):
     cabeceras = json.dumps(dict(request.headers),indent=2)
     print cabeceras
     return template(
-    ''' <b>¡Hola {{name}}!</b>
-        Tu petición ha enviado las siguientes cabeceras:<br>
+    ''' <b>Hello {{name}}!</b>
+        Your petition has effectively sent the following headers:<br>
         <pre>{{headers}}</pre>
-        ¿Ya te lo esperabas?'''
-     + getFooter(), name=name, headers=cabeceras)
+        Were you really waiting for this information?
+    ''' + getFooter(), name=name, headers=cabeceras)
 
 # Defining error websites...:
 from bottle import error
@@ -82,12 +82,12 @@ from bottle import error
 @error(404)
 def error404(error):
     print error
-    return template('¿Pero qué buscas? ¡Aquí no hay ná-de-ná! <br> <pre>{{error}}</pre>', error=str(error))
+    return template('What are you looking for? Nothing here! <br> <pre>{{error}}</pre>', error=str(error))
 
 @error(500)
 def error500(error):
     print error
-    return template('Error interno (código 500).. <br> <pre>{{error}}</pre>', error=str(error))
+    return template('Internal error (code 500).. <br> <pre>{{error}}</pre>', error=str(error))
 
 
 """
